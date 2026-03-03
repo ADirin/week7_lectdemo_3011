@@ -24,7 +24,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'master', url: ''
+                git branch: 'master', url: 'https://github.com/ADirin/week7_lectdemo_3011.git'
             }
         }
 
@@ -32,9 +32,9 @@ pipeline {
             steps {
                 script {
                     if (isUnix()) {
-                        sh 'mvn clean package -DskipTests'
+                        sh 'mvn clean package'
                     } else {
-                        bat 'mvn clean package -DskipTests'
+                        bat 'mvn clean package'
                     }
                 }
             }
